@@ -1,0 +1,8 @@
+// Exercise Part A
+// 1
+// Switch to the 'employees' database or create it if it doesn't exist
+use employees;
+
+// 2
+// Show all databases on a particular instance
+show dbs;

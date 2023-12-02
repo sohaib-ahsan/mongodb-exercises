@@ -1,0 +1,11 @@
+Exercise Part A
+1
+test> use employees
+switched to db employees
+
+2
+employees> show dbs
+admin   40.00 KiB
+config  60.00 KiB
+local   88.00 KiB
+employees>

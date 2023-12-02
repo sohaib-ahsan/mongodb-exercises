@@ -134,3 +134,19 @@ db.zips.find({
     { loc: [-80.76424299999999, 41.231819] }
   ]
 });
+
+
+// Exercise Part F
+// 1
+db.hr.find({
+  $where: function() {
+    return this.salary > 75000;
+  }
+});
+
+// 2
+db.hr.find({
+  $where: function() {
+    return this.name && this.name.includes("John");
+  }
+});

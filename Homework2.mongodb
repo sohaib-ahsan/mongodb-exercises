@@ -38,3 +38,43 @@ db.createCollection('marketing');
 // 3
 // Show all collections in the 'employees' database
 show collections;
+
+
+// Exercise Part C
+// 1
+db.hr.insert([
+  { employeeid: 101, name: 'Alice Johnson', salary: 60000 },
+  { employeeid: 102, name: 'Bob Smith', salary: 65000 },
+]);
+
+// Insert employee documents into the 'sales' collection
+db.sales.insert([
+  { employeeid: 201, name: 'Charlie Davis', salary: 70000 },
+  { employeeid: 202, name: 'David Wilson', salary: 75000 },
+]);
+
+
+// Insert employee documents into the 'it' collection
+db.it.insert([
+  { employeeid: 301, name: 'Eva White', salary: 80000 },
+  { employeeid: 302, name: 'Frank Thompson', salary: 85000 },
+]);
+
+// Insert employee documents into the 'marketing' collection
+db.marketing.insert([
+  { employeeid: 401, name: 'Grace Miller', salary: 90000 },
+  { employeeid: 402, name: 'Henry Turner', salary: 95000 },
+]);
+
+// 2
+// Retrieve all data from the 'hr' collection
+db.hr.find();
+
+// Retrieve all data from the 'sales' collection
+db.sales.find();
+
+// Retrieve all data from the 'it' collection
+db.it.find();
+
+// Retrieve all data from the 'marketing' collection
+db.marketing.find();

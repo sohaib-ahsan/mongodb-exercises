@@ -54,3 +54,114 @@ marketing
 sales
 employees>
 
+
+Exercise Part C
+1
+employees>db.hr.insert([
+...   { employeeid: 101, name: 'Alice Johnson', salary: 60000 },
+...   { employeeid: 102, name: 'Bob Smith', salary: 65000 },
+... ]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6568d164779ce102f513fbf8"),
+    '1': ObjectId("6568d164779ce102f513fbf9")
+  }
+}
+employees> db.sales.insert([
+...   { employeeid: 201, name: 'Charlie Davis', salary: 70000 },
+...   { employeeid: 202, name: 'David Wilson', salary: 75000 },
+... ]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6568d164779ce102f513fbfa"),
+    '1': ObjectId("6568d164779ce102f513fbfb")
+  }
+}
+employees> db.it.insert([
+...   { employeeid: 301, name: 'Eva White', salary: 80000 },
+...   { employeeid: 302, name: 'Frank Thompson', salary: 85000 },
+... ]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6568d164779ce102f513fbfc"),
+    '1': ObjectId("6568d164779ce102f513fbfd")
+  }
+}
+employees> db.marketing.insert([
+...   { employeeid: 401, name: 'Grace Miller', salary: 90000 },
+...   { employeeid: 402, name: 'Henry Turner', salary: 95000 },
+... ]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6568d190779ce102f513fbfe"),
+    '1': ObjectId("6568d190779ce102f513fbff")
+  }
+}
+employees>
+
+2
+employees> db.hr.find();
+[
+  {
+    _id: ObjectId("6568d164779ce102f513fbf8"),
+    employeeid: 101,
+    name: 'Alice Johnson',
+    salary: 60000
+  },
+  {
+    _id: ObjectId("6568d164779ce102f513fbf9"),
+    employeeid: 102,
+    name: 'Bob Smith',
+    salary: 65000
+  }
+]
+employees> db.sales.find();
+[
+  {
+    _id: ObjectId("6568d164779ce102f513fbfa"),
+    employeeid: 201,
+    name: 'Charlie Davis',
+    salary: 70000
+  },
+  {
+    _id: ObjectId("6568d164779ce102f513fbfb"),
+    employeeid: 202,
+    name: 'David Wilson',
+    salary: 75000
+  }
+]
+employees> db.it.find();
+[
+  {
+    _id: ObjectId("6568d164779ce102f513fbfc"),
+    employeeid: 301,
+    name: 'Eva White',
+    salary: 80000
+  },
+  {
+    _id: ObjectId("6568d164779ce102f513fbfd"),
+    employeeid: 302,
+    name: 'Frank Thompson',
+    salary: 85000
+  }
+]
+employees> db.marketing.find();
+[
+  {
+    _id: ObjectId("6568d190779ce102f513fbfe"),
+    employeeid: 401,
+    name: 'Grace Miller',
+    salary: 90000
+  },
+  {
+    _id: ObjectId("6568d190779ce102f513fbff"),
+    employeeid: 402,
+    name: 'Henry Turner',
+    salary: 95000
+  }
+]
+employees>

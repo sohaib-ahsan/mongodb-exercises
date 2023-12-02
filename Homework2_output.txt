@@ -750,3 +750,12 @@ employees> db.hr.find({
 employees>
 
 
+Exercise Part G
+1
+db.hr.find({}, { name: 1, salary: 1, _id: 0 });
+[
+  { name: 'John Steight', salary: 75000 },
+  { name: 'Syed', salary: 90000 },
+  { name: 'Wright John', salary: 65000 }
+]
+employees>

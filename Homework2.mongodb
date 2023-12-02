@@ -150,3 +150,8 @@ db.hr.find({
     return this.name && this.name.includes("John");
   }
 });
+
+
+// Exercise Part G
+// 1
+db.hr.find({}, { name: 1, salary: 1, _id: 0 });

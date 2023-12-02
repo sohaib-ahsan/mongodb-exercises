@@ -165,3 +165,100 @@ employees> db.marketing.find();
   }
 ]
 employees>
+
+
+Exercise Part D
+1
+employees> db.hr.insert({
+...   employeeid: 1187,
+...   name: "John Steight",
+...   salary: 75000
+... });
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('656a3ef151ab1afd8f4b28aa') }
+}
+employees> db.hr.insert({
+...   employeeid: 2455,
+...   name: "Syed",
+...   salary: 90000
+... });
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('656a3ef151ab1afd8f4b28ab') }
+}
+employees> db.hr.insert({
+...   employeeid: 24113,
+...   name: "Wright John",
+...   salary: 65000
+... });
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('656a3f3d51ab1afd8f4b28ac') }
+}
+
+2
+db.hr.find({ employeeid: { $gt: 2000 } });
+[
+  {
+    _id: ObjectId('656a3ef151ab1afd8f4b28ab'),
+    employeeid: 2455,
+    name: 'Syed',
+    salary: 90000
+  },
+  {
+    _id: ObjectId('656a3f3d51ab1afd8f4b28ac'),
+    employeeid: 24113,
+    name: 'Wright John',
+    salary: 65000
+  }
+]
+employees>
+
+3
+employees> db.hr.find({ name: { $exists: true } }).limit(2);
+[
+  {
+    _id: ObjectId('656a3ef151ab1afd8f4b28aa'),
+    employeeid: 1187,
+    name: 'John Steight',
+    salary: 75000
+  },
+  {
+    _id: ObjectId('656a3ef151ab1afd8f4b28ab'),
+    employeeid: 2455,
+    name: 'Syed',
+    salary: 90000
+  }
+]
+employees>
+
+4
+employees> db.hr.find({ name: /^John/ });
+[
+  {
+    _id: ObjectId('656a3ef151ab1afd8f4b28aa'),
+    employeeid: 1187,
+    name: 'John Steight',
+    salary: 75000
+  }
+]
+employees>
+
+5
+employees> db.hr.find({ name: /John/ });
+[
+  {
+    _id: ObjectId('656a3ef151ab1afd8f4b28aa'),
+    employeeid: 1187,
+    name: 'John Steight',
+    salary: 75000
+  },
+  {
+    _id: ObjectId('656a3f3d51ab1afd8f4b28ac'),
+    employeeid: 24113,
+    name: 'Wright John',
+    salary: 65000
+  }
+]
+employees>

@@ -115,3 +115,22 @@ db.hr.find({ name: /^John/ });
 // 5
 // Find all documents in the 'hr' collection where the name field contains "John"
 db.hr.find({ name: /John/ });
+
+
+// Exercise Part E
+// 1
+db.zips.find({ pop: { $lt: 1500 } });
+
+// 2
+db.zips.find({ city: "CHESTER" });
+
+// 3
+db.zips.find({ loc: [-84.38570799999999, 45.015207] });
+
+// 4
+db.zips.find({
+  $or: [
+    { city: "WARREN" },
+    { loc: [-80.76424299999999, 41.231819] }
+  ]
+});

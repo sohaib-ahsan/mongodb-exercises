@@ -9,3 +9,48 @@ admin   40.00 KiB
 config  60.00 KiB
 local   88.00 KiB
 employees>
+
+
+Exercise Part B
+1
+employees> use temporary;
+switched to db temporary
+temporary> db.createCollection('test');
+{ ok: 1 }
+temporary> show dbs;
+admin      40.00 KiB
+config     72.00 KiB
+local      88.00 KiB
+temporary   8.00 KiB
+temporary> show collections;
+test
+temporary> db.dropDatabase();
+{ ok: 1, dropped: 'temporary' }
+temporary> show dbs;
+admin   40.00 KiB
+config  72.00 KiB
+local   88.00 KiB
+temporary> show collections;
+
+temporary>
+
+2
+temporary> use employees;
+switched to db employees
+employees> db.createCollection('hr');
+{ ok: 1 }
+employees> db.createCollection('sales');
+{ ok: 1 }
+employees> db.createCollection('it');
+{ ok: 1 }
+employees> db.createCollection('marketing');
+{ ok: 1 }
+
+3
+employees> show collections
+hr
+it
+marketing
+sales
+employees>
+

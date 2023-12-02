@@ -6,3 +6,35 @@ use employees;
 // 2
 // Show all databases on a particular instance
 show dbs;
+
+
+/ Exercise Part B
+// 1
+// Switch to the 'temporary' database or create it if it doesn't exist
+use temporary;
+// Create a collection named 'test' and insert a document into it
+db.createCollection('test');
+// Show all databases before dropping the 'temporary' database
+show dbs;
+// Show all collections in the 'temporary' database before dropping it
+show collections;
+// Drop the 'temporary' database
+db.dropDatabase();
+// Show all databases after dropping the 'temporary' database
+show dbs;
+// Show all collections in the 'temporary' database after dropping it
+show collections;
+
+// 2
+// Switch to the 'employees' database or create it if it doesn't exist
+use employees;
+
+// Create collections for different departments using createCollection
+db.createCollection('hr');
+db.createCollection('sales');
+db.createCollection('it');
+db.createCollection('marketing');
+
+// 3
+// Show all collections in the 'employees' database
+show collections;
